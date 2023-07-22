@@ -71,7 +71,7 @@ export default function Notes(props) {
                 </div>
                 <div className="modal-footer">
                     <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" disabled={note.etitle.length < 5 || note.edescription.length < 5} className="btn btn-primary" onClick={handleClick}>Update Note</button>
+                    <button type="button" disabled={note.etitle.length < 5 || note.edescription.length < 5 || note.etag.length === 0} className="btn btn-primary" onClick={handleClick}>Update Note</button>
                 </div>
             </div>
         </div>

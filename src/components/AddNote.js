@@ -8,14 +8,14 @@ export default function AddNote(props) {
     const [note,setNote] = useState({
         title : "",
         description : "",
-        tag : ""
+        tag : "Personal"
     })
 
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title,note.description,note.tag);
         props.showAlert("Notes Added successfully", "success");
-        setNote({title: "", description: "", tag: ""})
+        setNote({title: "", description: "", tag: "Personal"})
     }
 
     const onChange = (event) => {
@@ -38,7 +38,7 @@ export default function AddNote(props) {
               <label htmlFor="tag" className="form-label">Tag</label>
               <input type="text" className="form-control" id="tag" name='tag' value={note.tag} onChange={onChange}/>
             </div>
-            <button disabled={note.title.length < 5 || note.description.length < 5} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
+            <button disabled={note.title.length < 5 || note.description.length < 5 || note.tag.length === 0} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
         </form>
         </div>
     </div>

@@ -15,7 +15,7 @@ export default function NoteItem(props) {
                     <i className="fa-solid fa-pen-to-square" onClick={(() => {updateNote(note)})}></i>
                 </div>
                 <p className="card-text">{note.description}</p>
-                <p className="card-text">{note.tag ? note.tag : "Personal"}</p>
+                <p className="card-text">{note.tag}</p>
             </div>
         </div>
     </div>
